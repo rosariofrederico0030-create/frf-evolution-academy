@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="Fortaleza Rosário Frederico Evolution Academy — plataforma de aprendizagem de Inglês e Francês.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>FRF Evolution Academy</title>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="FRF Evolution Academy">
+    <span class="brand-mark">FRF</span>
+    <span><b>Fortaleza Rosário Frederico</b><small>EVOLUTION ACADEMY</small></span>
+  </a>
+  <button id="installBtn" class="btn btn-gold hidden">Instalar APP</button>
+</header>
+
+<main id="app">
+  <section id="home" class="screen active">
+    <div class="hero">
+      <div class="eyebrow">ACADEMIA DIGITAL • ANGOLA → MUNDO</div>
+      <h1>Aprende línguas.<br><span>Evolui todos os dias.</span></h1>
+      <p>Inglês e Francês com percurso personalizado, níveis A1–C2, prática, avaliações e acompanhamento da evolução.</p>
+      <div class="actions">
+        <button class="btn btn-gold" data-go="register">Começar agora</button>
+        <button class="btn btn-outline" data-go="courses">Ver cursos</button>
+      </div>
+    </div>
+    <div class="cards three">
+      <article><strong>A1 → C2</strong><span>Percurso por níveis</span></article>
+      <article><strong>Inglês + Francês</strong><span>Competências completas</span></article>
+      <article><strong>Evolution Points</strong><span>Motivação e progresso</span></article>
+    </div>
+    <div class="panel">
+      <h2>Como funciona</h2>
+      <div class="steps">
+        <div><b>01</b><span>Cria o teu perfil</span></div>
+        <div><b>02</b><span>Escolhe o objetivo</span></div>
+        <div><b>03</b><span>Faz o diagnóstico</span></div>
+        <div><b>04</b><span>Estuda e acompanha a evolução</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses" class="screen">
+    <div class="section-head"><div><div class="eyebrow">CATÁLOGO</div><h2>Cursos da Academy</h2></div></div>
+    <div id="courseGrid" class="course-grid"></div>
+  </section>
+
+  <section id="register" class="screen">
+    <div class="section-head"><div><div class="eyebrow">PRIMEIRO PASSO</div><h2>Criar perfil</h2></div></div>
+    <form id="registerForm" class="panel form">
+      <label>Nome completo<input id="name" required placeholder="O teu nome"></label>
+      <label>E-mail<input id="email" type="email" required placeholder="nome@email.com"></label>
+      <label>Objetivo<select id="goal"><option>Conversação</option><option>Escola / estudos</option><option>Trabalho / carreira</option><option>Viagem</option><option>Preparação para exames</option><option>Formação de professor</option></select></label>
+      <label>Língua principal<select id="language"><option>Inglês</option><option>Francês</option></select></label>
+      <button class="btn btn-gold" type="submit">Criar perfil e entrar</button>
+      <p class="muted">Esta versão guarda o perfil localmente neste dispositivo. Para contas reais de vários alunos, precisaremos ligar uma base de dados e autenticação.</p>
+    </form>
+  </section>
+
+  <section id="dashboard" class="screen">
+    <div class="dashboard-head">
+      <div><div class="eyebrow">ÁREA DO ALUNO</div><h2 id="welcome">Bem-vindo</h2><p id="goalText" class="muted"></p></div>
+      <button class="btn btn-outline" data-go="diagnostic">Diagnóstico</button>
+    </div>
+    <div class="cards three">
+      <article><strong id="points">0</strong><span>Evolution Points</span></article>
+      <article><strong id="streak">0</strong><span>Dias de sequência</span></article>
+      <article><strong id="progress">0%</strong><span>Progresso geral</span></article>
+    </div>
+    <div class="panel">
+      <h3>O teu percurso</h3>
+      <div class="progressbar"><span id="progressBar"></span></div>
+      <p id="levelText" class="muted"></p>
+    </div>
+    <div class="panel">
+      <h3>Próxima aula recomendada</h3>
+      <div id="recommended" class="lesson-card"></div>
+    </div>
+  </section>
+
+  <section id="diagnostic" class="screen">
+    <div class="section-head"><div><div class="eyebrow">ADAPTAÇÃO</div><h2>Diagnóstico rápido</h2></div></div>
+    <div class="panel">
+      <p>Responde às perguntas para receberes uma recomendação inicial. Este é um diagnóstico demonstrativo; numa versão de produção teremos avaliação completa por competência.</p>
+      <form id="diagnosticForm"></form>
+    </div>
+  </section>
+
+  <section id="lesson" class="screen">
+    <div class="section-head"><div><div class="eyebrow">AULA INTERATIVA</div><h2 id="lessonTitle">Lesson</h2></div></div>
+    <div class="panel lesson">
+      <div class="tag" id="lessonTag">English • A1</div>
+      <p id="lessonPrompt"></p>
+      <div id="lessonOptions" class="options"></div>
+      <div id="lessonFeedback" class="feedback"></div>
+      <button id="lessonContinue" class="btn btn-gold hidden">Continuar</button>
+    </div>
+  </section>
+
+  <section id="profile" class="screen">
+    <div class="section-head"><div><div class="eyebrow">PERFIL</div><h2>O meu perfil</h2></div></div>
+    <div id="profilePanel" class="panel"></div>
+  </section>
+
+  <section id="admin" class="screen">
+    <div class="section-head"><div><div class="eyebrow">OWNER CENTER • DEMO</div><h2>Painel do fundador</h2></div></div>
+    <div class="panel">
+      <h3>Fortaleza Rosário Frederico Evolution Academy</h3>
+      <p><b>Fundador / proprietário indicado no projeto:</b> Rosário José Chimbulo Frederico</p>
+      <p class="muted">Esta identificação dentro do projeto não substitui o registo legal da empresa, marca ou propriedade intelectual.</p>
+    </div>
+    <div class="cards three">
+      <article><strong id="adminStudents">0</strong><span>Perfis neste dispositivo</span></article>
+      <article><strong>2</strong><span>Línguas iniciais</span></article>
+      <article><strong>A1–C2</strong><span>Arquitetura de níveis</span></article>
+    </div>
+    <div class="panel">
+      <h3>Próxima fase profissional</h3>
+      <ul class="checklist">
+        <li>Autenticação real e recuperação de conta</li>
+        <li>Base de dados Supabase</li>
+        <li>Painel online seguro do administrador</li>
+        <li>Conteúdos de áudio, vídeo e avaliações</li>
+        <li>Certificados e relatórios de progresso</li>
+        <li>Pagamentos e planos, quando a empresa estiver pronta</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<nav class="bottom-nav" aria-label="Navegação">
+  <button data-go="home">Início</button>
+  <button data-go="courses">Cursos</button>
+  <button data-go="dashboard">Aluno</button>
+  <button data-go="profile">Perfil</button>
+  <button data-go="admin">Owner</button>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>
