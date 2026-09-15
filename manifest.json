@@ -1,0 +1,18 @@
+{
+  "name": "Fortaleza Rosário Frederico Evolution Academy",
+  "short_name": "FRF Academy",
+  "description": "Academia digital de Inglês e Francês.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071426",
+  "theme_color": "#071426",
+  "lang": "pt-PT",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
